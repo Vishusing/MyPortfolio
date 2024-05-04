@@ -1,7 +1,17 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import React from 'react'
 
 const ContactCard = () => {
+
+    const [email, setEmail] = useState('');
+    const [text, setText] = useState('');
+
+    const sendEmail = () => {
+        const subject = encodeURIComponent("Some default subject");
+        const body = encodeURIComponent(text);
+        window.open(`mailto:${email}?subject=${subject}&body=${body}`);
+    }
+
     return (
         <motion.div
             className="bg-black h-[490px] w-[900px] rounded-lg flex mx-7 md:mx-6"
@@ -13,10 +23,10 @@ const ContactCard = () => {
                     src="/Contact.webp"
                     width={250}
                     alt="Contact"
-                />
+                /> 
             </div>
-            <div className="w-full md:w-1/2 px-2 flex flex-col items-center justify-center gap-8">
-                <div className="gap-4 w-full flex flex-col sm:flex-row items-center justify-center">
+            <div className="w-full md:w-1/2 px-2 flex flex-col items-center justify-center gap-6">
+                <div className="gap-3 w-full flex flex-col sm:flex-row items-center justify-center">
                     <a href="tel:+919919438441">
                         <span className="text-white flex gap-2">
                             <img
@@ -38,15 +48,24 @@ const ContactCard = () => {
                         </span>
                     </a>
                 </div>
-                <textarea
-                    placeholder='Contact me'
-                    className='p-1 rounded-lg'
-                    name=""
-                    id=""
-                    cols="45"
-                    rows="10" />
+                <input
+                className="p-2 w-[340px] rounded-lg"
+                placeholder="Email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+            />
+               <textarea
+                placeholder='Message'
+                className='p-2 rounded-lg'
+                value={text}
+                onChange={(e) => setText(e.target.value)}
+                cols="45"
+                rows="10"
+            />
                 <button
                     className='bg-blue-800 hover:bg-blue-700 duration-700 text-white rounded-lg py-2 px-4'
+                    onClick={sendEmail}
                 >
                     Send
                 </button>
