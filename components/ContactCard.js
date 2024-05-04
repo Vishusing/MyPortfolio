@@ -64,7 +64,7 @@ const ContactCard = () => {
                 rows="10"
             />
                 <button
-                    className='bg-blue-800 hover:bg-blue-700 duration-700 text-white rounded-lg py-2 px-4'
+                    className='bg-blue-600 hover:bg-blue-500 duration-700 text-white rounded-lg py-2 px-4'
                     onClick={sendEmail}
                 >
                     Send
