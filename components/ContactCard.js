@@ -43,7 +43,7 @@ const ContactCard = () => {
                     className='p-1 rounded-lg'
                     name=""
                     id=""
-                    cols="50"
+                    cols="45"
                     rows="10" />
                 <button
                     className='bg-blue-800 hover:bg-blue-700 duration-700 text-white rounded-lg py-2 px-4'
