@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 export default function Home() {
   return (
     <>
-      <div className="h-[100vh] font-bold flex flex-col items-center justify-center gap-4 text-black">
+      <div className="h-[100vh] font-bold flex flex-col items-center justify-center gap-4 bg-slate-300 text-black">
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1.5, opacity: 1 }}
@@ -66,7 +66,7 @@ export default function Home() {
         </button>
       </div>
       <div
-        className='bg-white h-[100vh] w-full flex items-center justify-center'
+        className='bg-slate-300 h-[100vh] w-full flex items-center justify-center'
       >
         <ContactCard />
       </div>
