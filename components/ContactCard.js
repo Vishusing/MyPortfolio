@@ -7,7 +7,7 @@ const ContactCard = () => {
     const [text, setText] = useState('');
 
     const sendEmail = () => {
-        const subject = encodeURIComponent("Hey.. Vishal..Someone Messaged you on your portfolio");
+        const subject = encodeURIComponent("");
         const body = encodeURIComponent(text);
         window.open(`mailto:${email}?subject=${subject}&body=${body}`);
     }
